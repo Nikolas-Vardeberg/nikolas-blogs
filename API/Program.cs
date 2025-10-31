@@ -1,5 +1,7 @@
 using API.Data;
 using Microsoft.EntityFrameworkCore;
+using API.Interfaces;
+using API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
@@ -8,6 +10,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase"));
 });
+
+builder.Services.AddScoped<IBlogsService, BlogService>();
 
 builder.Services.AddCors(options =>
 {
