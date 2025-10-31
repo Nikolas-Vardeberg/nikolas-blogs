@@ -5,6 +5,7 @@ using API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
@@ -22,6 +23,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+app.MapControllers();
 app.UseHttpsRedirection();
 app.UseCors();
 app.UseHttpsRedirection();

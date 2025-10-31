@@ -61,6 +61,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Riok.Mapperly": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
